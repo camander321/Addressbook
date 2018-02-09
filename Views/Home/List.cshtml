@@ -1,0 +1,10 @@
+@{
+ Layout = "_Layout";
+}
+
+<h2>@Model["msg"]</h3>
+
+@foreach(var contact in @Model["contacts"])
+{
+  <h5><a href="/contact/@contact.GetId()">@contact.GetName()</a></h5>
+}

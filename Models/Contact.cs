@@ -22,6 +22,16 @@ namespace AddressBook.Models
       _instances.Add(this);
     }
     
+    public int GetId()
+    {
+      return _id;
+    }
+    
+    public string GetName()
+    {
+      return _name;
+    }
+    
     public bool Contains(string searchString)
     {
       return _name.Contains(searchString) || _number.Contains(searchString) || _address.Contains(searchString);
@@ -38,6 +48,11 @@ namespace AddressBook.Models
         }
       }
       return results;
+    }
+    
+    public static List<Contact> GetAll()
+    {
+      return _instances;
     }
     
     public static Contact Find(int idx)
