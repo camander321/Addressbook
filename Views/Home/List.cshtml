@@ -4,7 +4,7 @@
 
 <h2>@Model["msg"]</h3>
 
-  @foreach(var contact in @Model["contacts"])
-  {
-    <a href="/contact/@contact.GetId()"><h4>@contact.GetName()</h4></a>
-  }
+@foreach(var contact in @Model["contacts"])
+{
+  <a href="/contact/@contact.GetId()"><h4><img src="~/img/avatar.png"> @contact.GetName()</h4></a>
+}
