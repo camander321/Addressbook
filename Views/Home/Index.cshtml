@@ -2,15 +2,40 @@
  Layout = "_Layout";
 }
 
+<div class="row">
+  <br>
+  <div class="col-md-6">
+    <form action="/list/all" method="get">
+      <button type="submit" class="btn btn-info form-control">Show All Contacts</button>
+    </form>
+  </div>
 
-<h3><a class="link" href="/list/all">Show All Contacts</a></h3>
+  <div class="col-md-6">
+    <div class="row form-group">
+      <form action="/list/search" method="get">
+        <div class="col-md-10">
+          <input type="text" class="form-control" name="search" placeholder="Search Contacts">
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success form-control">GO</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-<form action="/list/search" method="get">
-  <input type="text" name="search" placeholder="Search Contacts">
-  <button type="submit" class="btn btn-warning">GO</button>
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <form action="/new" method="get">
+      <button type="submit" class="btn btn-warning form-control">Add New Contact</button>
+    </form>
+  </div>
+  
+  <div class="col-md-6">
+    <form action="/remove/all" method="post">
+      <button type="submit" class="btn btn-danger form-control">Delete All Contacts</button>
+    </form>
+  </div>
+</div>
 
-<br>
-<form action="/remove/all" method="post">
-  <button type="submit" class="btn btn-danger">Delete All Contacts</button>
-</form>
+

@@ -4,15 +4,31 @@
 
 <h1>Add A New Contact</h1>
 <form action="/add" method="post">
-  <div class="form-group">
-    <input type="text" name="name" class="form-control" placeholder="Name">
-    <input type="tel" name="number" class="form-control" placeholder="Number">
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Name">
+    </div>
+    
+    <div class="col-md-6">
+      <input type="tel" name="number" class="form-control" placeholder="Number">
+    </div>   
   </div>
-  <div class="form-group">
-    <input type="text" name="address" class="form-control" placeholder="Address">
-    <input type="text" name="city" class="form-control" placeholder="City">
-    <input type="text" name="state" class="form-control" placeholder="State">
-    <input type="text" name="zip" class="form-control" placeholder="Zip">
+  
+  <div class="row form-group">
+    <div class="col-md-6">
+      <input type="text" name="address" class="form-control" placeholder="Address">
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="city" class="form-control" placeholder="City">
+    </div>
+
+    <div class="col-md-6">
+      <input type="text" name="state" class="form-control" placeholder="State">
+    </div>
+    <div class="col-md-6">
+      <input type="text" name="zip" class="form-control" placeholder="Zip">
+    </div>
   </div>
   
   <div class="form-group">

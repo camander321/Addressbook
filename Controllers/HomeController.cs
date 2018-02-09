@@ -53,16 +53,34 @@ namespace AddressBook.Controllers
     public ActionResult Search()
     {
       string searchString = Request.Query["search"];
-      List<Contact> contacts = Contact.Search(searchString);
+      string msg;
+      List<Contact> contacts;
+      if (searchString.Length == 0)
+      {
+        msg = "Showing All Contacts";
+        contacts = Contact.GetAll();
+      }
+      else
+      {
+        msg = "Showing Results For '" + searchString + "'";
+        contacts = Contact.Search(searchString);
+        if (contacts.Count == 0)
+        {
+          msg = "No Results Found For '" + searchString + "'";
+          contacts = Contact.GetAll();
+        }
+      }
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("contacts", contacts);
-      model.Add("msg", "Showing Results For '" + searchString + "'");
+      model.Add("msg", msg);
       return View("List", model);
     }
     
     [HttpGet("/contact/{id}")]
     public ActionResult Detail(int id)
     {
+      if (id >= Contact.GetAll().Count)
+        return View("/");
       return View("Detail", Contact.Find(id));
     }
     
