@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Project
+namespace AddressBook
 {
     public class program
     {
