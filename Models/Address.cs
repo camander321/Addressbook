@@ -18,6 +18,26 @@ namespace AddressBook.Models
       _zip = zip;
     }
     
+    public string GetAddress()
+    {
+      return _address;
+    }
+    
+    public string GetCity()
+    {
+      return _city;
+    }
+    
+    public string GetState()
+    {
+      return _state;
+    }
+    
+    public string GetZip()
+    {
+      return _zip;
+    }
+    
     public bool Contains(string searchstring)
     {
       return _address.Contains(searchstring) || _city.Contains(searchstring) || _state.Contains(searchstring) || _zip.Contains(searchstring);

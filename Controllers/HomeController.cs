@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using AddressBook.Models;
+using System;
 using System.Collections.Generic;
 
 namespace AddressBook.Controllers
@@ -42,6 +43,12 @@ namespace AddressBook.Controllers
           model.Add("contacts", Contact.GetAll());
           model.Add("msg", "Showing All Contacts");
           return View("List", model);
+        }
+        
+        [HttpGet("/contact/{id}")]
+        public ActionResult Detail(int id)
+        {
+          return View("Detail", Contact.Find(id));
         }
         
         [HttpGet("/new")]

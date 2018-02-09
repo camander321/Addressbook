@@ -32,6 +32,16 @@ namespace AddressBook.Models
       return _name;
     }
     
+    public string GetNumber()
+    {
+      return _number;
+    }
+    
+    public Address GetAddress()
+    {
+      return _address;
+    }
+    
     public bool Contains(string searchString)
     {
       return _name.Contains(searchString) || _number.Contains(searchString) || _address.Contains(searchString);
