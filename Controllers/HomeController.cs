@@ -49,6 +49,17 @@ namespace AddressBook.Controllers
       return View("List", model);
     }
     
+    [HttpGet("/list/search")]
+    public ActionResult Search()
+    {
+      string searchString = Request.Query["search"];
+      List<Contact> contacts = Contact.Search(searchString);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("contacts", contacts);
+      model.Add("msg", "Showing Results For '" + searchString + "'");
+      return View("List", model);
+    }
+    
     [HttpGet("/contact/{id}")]
     public ActionResult Detail(int id)
     {
@@ -61,13 +72,19 @@ namespace AddressBook.Controllers
       return View("ContactForm");
     }
     
-    
-    
     [HttpGet("/remove/{id}")]
     public ActionResult Removeconfirm(int id)
     {
       string msg = "Contact info for '" + Contact.Find(id).GetName() + "' has been successfully removed!";
       Contact.Remove(id);
+      return View("Confirm", msg);
+    }
+    
+    [HttpPost("/remove/all")]
+    public ActionResult Clear()
+    {
+      Contact.Clear();
+      string msg = "Contact List Has Been Cleared";
       return View("Confirm", msg);
     }
   }

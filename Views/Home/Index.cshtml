@@ -4,4 +4,13 @@
 
 
 <h3><a class="link" href="/list/all">Show All Contacts</a></h3>
-<h3><a class="link" href="/search">Search Contacts</a></h3>
+
+<form action="/list/search" method="get">
+  <input type="text" name="search" placeholder="Search Contacts">
+  <button type="submit" class="btn btn-warning">GO</button>
+</form>
+
+<br>
+<form action="/remove/all" method="post">
+  <button type="submit" class="btn btn-danger">Delete All Contacts</button>
+</form>

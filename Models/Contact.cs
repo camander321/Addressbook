@@ -18,8 +18,7 @@ namespace AddressBook.Models
       _number = number;
       _address = address;
       
-      _id = _instances.Count;
-      _instances.Add(this);
+      save();
     }
     
     public int GetId()
@@ -44,11 +43,27 @@ namespace AddressBook.Models
     
     public bool Contains(string searchString)
     {
-      return _name.Contains(searchString) || _number.Contains(searchString) || _address.Contains(searchString);
+      return _name.ToLower().Contains(searchString) || _number.ToLower().Contains(searchString) || _address.Contains(searchString);
+    }
+    
+    private void save()
+    {
+      int idx = 0;
+      while (idx < _instances.Count && String.Compare(_instances[idx]._name, _name, true) < 1)
+      {
+        idx++;
+      }
+      _instances.Insert(idx, this);
+      
+      for (int i = 0; i < _instances.Count; i++)
+      {
+        _instances[i]._id = i;
+      }
     }
     
     public static List<Contact> Search(string searchString)
     {
+      searchString = searchString.ToLower();
       List<Contact> results = new List<Contact>();
       foreach(Contact contact in _instances)
       {
@@ -77,6 +92,11 @@ namespace AddressBook.Models
       {
         _instances[i]._id = i;
       }
+    }
+    
+    public static void Clear()
+    {
+      _instances.Clear();
     }
   }
 }

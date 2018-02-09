@@ -40,7 +40,7 @@ namespace AddressBook.Models
     
     public bool Contains(string searchstring)
     {
-      return _address.Contains(searchstring) || _city.Contains(searchstring) || _state.Contains(searchstring) || _zip.Contains(searchstring);
+      return _address.ToLower().Contains(searchstring) || _city.ToLower().Contains(searchstring) || _state.ToLower().Contains(searchstring) || _zip.ToLower().Contains(searchstring);
     }
   }
 }
