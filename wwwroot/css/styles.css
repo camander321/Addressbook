@@ -1,3 +1,40 @@
 body {
   background-color: black;
+  color: #00afff;
+  text-align: center;
+}
+
+.link {
+  width: 100%;
+}
+
+.header {
+  margin: 0px;
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  max-height: 50;
+  color:#CCC;
+  background-color: #222222;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content {
+  margin-top: 95px;
+}
+
+.footer {
+  margin: 0px;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  padding:18px;
+  padding-bottom: 24px;
+  background-color: #222222;
+  overflow: hidden;
+  white-space: nowrap;
 }

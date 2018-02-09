@@ -8,7 +8,11 @@
   </head>
   <body>
     <div class="container">
-      @RenderBody()
+      @Html.Partial("Header")
+      <div class="content">
+        @RenderBody()
+      </div>
+      @Html.Partial("Footer")
     </div>
   </body>
 </html>
