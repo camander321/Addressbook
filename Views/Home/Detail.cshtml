@@ -2,10 +2,11 @@
  Layout = "_Layout";
 }
 
-<div class="well">
-  <h2>@Model.GetName()</h2>
-  <h3>@Model.GetNumber()</h3>
-  <br>
-  <h3>@Model.GetAddress().GetAddress()</h3>
-  <h3>@Model.GetAddress().GetCity() @Model.GetAddress().GetState() @Model.GetAddress().GetZip()</h3>
-</div>
+
+<h2>@Model.GetName()</h2>
+<h3>@Model.GetNumber()</h3>
+<br>
+<h3>@Model.GetAddress().GetAddress()</h3>
+<h3>@Model.GetAddress().GetCity() @Model.GetAddress().GetState() @Model.GetAddress().GetZip()</h3>
+<br><br>
+<a href="/remove/@Model.GetId()">Delete Contact</a>
