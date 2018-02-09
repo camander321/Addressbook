@@ -30,6 +30,7 @@ img {
 .content {
   margin-top: 95px;
   margin-bottom: 75px;
+  display: none;
 }
 
 .well {

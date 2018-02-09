@@ -72,7 +72,7 @@ namespace AddressBook.Controllers
       return View("ContactForm");
     }
     
-    [HttpGet("/remove/{id}")]
+    [HttpPost("/remove/{id}")]
     public ActionResult Removeconfirm(int id)
     {
       string msg = "Contact info for '" + Contact.Find(id).GetName() + "' has been successfully removed!";

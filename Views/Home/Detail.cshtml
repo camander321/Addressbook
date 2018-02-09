@@ -9,4 +9,6 @@
 <h3>@Model.GetAddress().GetAddress()</h3>
 <h3>@Model.GetAddress().GetCity() @Model.GetAddress().GetState() @Model.GetAddress().GetZip()</h3>
 <br><br>
-<a href="/remove/@Model.GetId()">Delete Contact</a>
+<form action="/remove/@Model.GetId()" method="post">
+  <button type="submit" class="btn btn-danger">Delete This Contact</button>
+</form>
