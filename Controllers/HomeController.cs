@@ -6,9 +6,9 @@ namespace AddressBook.Controllers
     {
 
         [Route("/")]
-        public ActionResult ContactForm()
+        public ActionResult Index()
         {
-            return View("ContactForm");
+            return View("Index");
         }
     }
 }
